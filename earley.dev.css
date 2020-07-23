@@ -1,8 +1,12 @@
 body {
     margin: 0;
-    background-color: #3d3d3d;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(15,0,36,1) 14%, rgba(26,9,121,1) 60%, rgba(0,255,246,1) 100%);
     color: #FFF;
     font-family: sans-serif;
+    height:2000px;
+    min-height: 200vh;
+    overflow-x: hidden;
 }
 
 h1{
@@ -17,12 +21,24 @@ h2{
 
 }
 
+#root{
+
+}
+
+#root-container{
+
+}
+
 #photo-credit{
 
 }
 
 #main-menu{
 
+}
+
+#earley-dev-threejs-renderer{
+    position: absolute;
 }
 
 .copy{

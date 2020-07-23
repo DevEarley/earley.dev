@@ -1,0 +1,152 @@
+
+class EarleyDevThreeJS extends React.Component {
+
+    scene = new THREE.Scene();
+    height = 2000;
+    width = window.innerWidth;
+    camera = new THREE.PerspectiveCamera(75, this.width / this.height, 0.1, 15000);
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+
+    bubbles;
+    bubbleCount = 1000;
+    topBubbleBound = 1200;
+    bottomBubbleBound = -2200;
+    bubbleGeometry = new THREE.Geometry();
+    bubbleMaterial = new THREE.ParticleBasicMaterial({
+        color: 0xFFFFFF,
+        size: 20,
+        map: THREE.ImageUtils.loadTexture(
+            "bubble.png"
+        ), depthTest: false,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+    });
+
+    rays;
+    rayCount = 20;
+    topRayBound = 1200;
+    bottomRayBound = 1190;
+    rayGeometry = new THREE.Geometry();
+    rayMaterial = new THREE.ParticleBasicMaterial({
+        opacity: (Math.random() * 0.3),
+        color: 0xFFFFFF,
+        size: 1500,
+        map: THREE.ImageUtils.loadTexture(
+            "rays.png"
+        ), depthTest: false,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+    });
+    componentDidMount() {
+        this.renderer.setSize(this.width, this.height);
+        this.mount.appendChild(this.renderer.domElement);
+        this.camera.position.z = 1000;
+        this.setupBubbles();
+        this.setupRays();
+        var animate = () => {
+            requestAnimationFrame(animate);
+            this.updateRays();
+            this.updateBubbles();
+            this.renderer.render(this.scene, this.camera);
+        };
+
+        document.getElementById("scroll-container").addEventListener("wheel", (e) => {
+            this.onScroll(e);
+        });
+        document.getElementById("scroll-container").addEventListener("scroll", (e) => {
+            this.onScroll(e);
+        });
+        animate();
+    }
+
+    onScroll(e) {
+        // console.log(e)
+        // this.camera.position.z -= e.deltaY * 0.1;
+    }
+    setupRays() {
+        for (var p = 0; p < this.rayCount; p++) {
+            var pX = Math.random() * 10000 - 5000,
+                pY = (Math.random() * (this.topRayBound - this.bottomRayBound)) + this.bottomRayBound,
+                pZ = (Math.random() * 1000 - 500) - 1000,
+                ray = new THREE.Vector3(pX, pY, pZ);
+            ray.velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 0.2,
+                0,
+                0);
+            this.rayGeometry.vertices.push(ray);
+        }
+        this.rays = new THREE.Points(
+            this.rayGeometry,
+            this.rayMaterial)
+        this.rays.sortParticles = true;
+        this.scene.add(this.rays);
+    }
+
+    updateRays() {
+        for (var i = 0; i < this.rayGeometry.vertices.length; i++) {
+            var particle = this.rayGeometry.vertices[i];
+            particle.velocity.x += (Math.random() - 0.5) * 0.2;
+            particle.x += particle.velocity.x;
+        }
+        console.log(this.rayGeometry)
+
+        this.rayGeometry.verticesNeedUpdate = true;
+    }
+
+    setupBubbles() {
+        for (var p = 0; p < this.bubbleCount; p++) {
+
+            var pX = Math.random() * 10000 - 5000,
+                pY = (Math.random() * (this.topBubbleBound - this.bottomBubbleBound)) + this.bottomBubbleBound,
+                pZ = (Math.random() * 10000 - 5000) - 5000,
+                particle = new THREE.Vector3(pX, pY, pZ);
+            particle.startY = pY;
+            particle.velocity = new THREE.Vector3(
+                0,              // x
+                -Math.random(), // y: random vel
+                0);
+
+            // add it to the geometry
+            this.bubbleGeometry.vertices.push(particle);
+        }
+
+        // create the particle system
+        this.bubbles = new THREE.Points(
+            this.bubbleGeometry,
+            this.bubbleMaterial)
+        this.bubbles.sortParticles = true;
+        // add it to the scene
+        this.scene.add(this.bubbles);
+    }
+
+
+    updateBubbles() {
+        //this.particleSystem.rotation.y += 0.01;
+        for (var i = 0; i < this.bubbleGeometry.vertices.length; i++) {
+            var particle = this.bubbleGeometry.vertices[i];
+            if (particle.y > this.topBubbleBound) {
+                particle.y = this.bottomBubbleBound;
+            }
+            particle.velocity.x += (Math.random() - 0.5) * 0.02;
+            particle.x += particle.velocity.x;
+            particle.y += 1;
+        }
+        this.bubbleGeometry.verticesNeedUpdate = true;
+    }
+
+
+    onmousemove = (e) => {
+        // console.log("mouse move", e)
+        // this.particleSystem.rotation.y -= (e.movementX * 0.0001);
+        this.camera.rotation.y += (e.movementX * 0.0001);
+    }
+    render() {
+        return (
+            <div onMouseMove={this.onmousemove} ref={ref => (this.mount = ref)} />
+        )
+    }
+
+}
+// 
+
+ReactDOM.render(<EarleyDevThreeJS />, document.getElementById("earley-dev-threejs-renderer"));

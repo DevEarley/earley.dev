@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Earley.Dev - Alex Earley's Personal Website</title>
-
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js"></script>
-    <script type="text/babel" src="main.babel"></script>
+    <script type="text/babel" src="threejs.babel"></script>
+    <script type="text/babel" src="root.babel"></script>
     <link href="earley.dev.css" rel="stylesheet" />
-
 </head>
 
-<body>
-    <div id="root"></div>
+<body id="scroll-container">
+    <div id="earley-dev-threejs-renderer"></div>
+    <div id="root-container"></div>
 </body>
 
 </html>
