@@ -1,0 +1,36 @@
+const reactStarterJSX = main_JSX();
+
+ReactDOM.render(
+    reactStarterJSX,
+    document.getElementById('root')
+);
+
+function main_JSX() {
+    return <div>
+        {header_JSX()}
+        <div className="copy">
+            Welcome! I am a full stack web developer and designer from Boynton Beach, Florida.
+            I have worked on enterprise solutions, mobile apps, developer tools, marketing campaigns, indie games, and wholesale trading platforms.
+            I am proficient with JavaScript, TypeScript, HTML, SCSS and Angular on the front end; C# with .NET and SQL server side. Please see my resume for more information.
+        </div>
+        <div id="main-menu">
+            <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing"> Resume </a>
+        </div>
+        <a id="photo-credit" href="https://unsplash.com/@pawel_czerwinski">Amazing background art by Pawel Czerwinski 🎨📸</a>;
+        {threeJS_JSX()}
+    </div>
+}
+
+function header_JSX() {
+    return <div>
+        <img id="avatar" src="avatar.png" />
+        <h1>Alex Earley </h1>
+        <h2>Software Developer</h2>
+    </div>
+}
+
+function threeJS_JSX() {
+    return <div>
+        hello
+    </div>
+}
