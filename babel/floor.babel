@@ -1,0 +1,26 @@
+class EarleyDevFloor {
+    floorTexture = new THREE.ImageUtils.loadTexture('sand_w_caustics.png');
+    floorMaterial = new THREE.MeshBasicMaterial({ map: this.floorTexture, side: THREE.DoubleSide });
+    floorGeometry = new THREE.PlaneGeometry(40000, 20000, 1, 1);
+    floor = new THREE.Mesh(this.floorGeometry, this.floorMaterial);
+
+    setupFloor() {
+        this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
+        this.floorTexture.repeat.set(0.5, 8);
+
+        this.floor.position.y = -3000;
+        this.floor.position.z = -13000;
+        this.floor.rotation.x = Math.PI / 1.8;
+        return this.floor;
+    }
+
+    updateFloor() {
+        if (this.floorTexture.offset.x >= 4096) {
+            this.floorTexture.offset.x = 0;
+        } else {
+            this.floorTexture.offset.x += 1 / 16;
+        }
+        this.floorTexture.needsUpdate = true;
+
+    }
+}

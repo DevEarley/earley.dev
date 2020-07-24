@@ -5,23 +5,28 @@ body {
     color: #FFF;
     font-family: sans-serif;
     height:200vh;
+    min-height: 1300px;
     overflow-x: hidden;
+    position: relative;
 }
 
 h1{
-   
+    margin: 0;
+    background-color: #130341;
+    color:rgba(0,255,246,1);
     padding:40px;
+    padding-top:120px;
 }
-p{
-    height: 40px;
-    background-image: url('pattern_3.png');
-}
-
 
 h2{
+    padding-left:40px;
+
+    color:#130341;
 
 }
-
+a{
+    color:#fff;
+}
 #avatar{
 
 }
@@ -31,11 +36,13 @@ h2{
 }
 
 #root-container{
-    /* position: absolute;
+
+    position: absolute;
     top:0;
-    height: 2000px;
+    bottom: 0;
     left:0;
-    right:0; */
+    right:0; 
+    z-index: 1;
    
     
 }
@@ -50,9 +57,15 @@ h2{
 
 #earley-dev-threejs-renderer{
     position: absolute;
+    top:100px
 }
 
 .copy{
+    margin:40px;
+    padding:40px;
+    max-width: 600px;
+    color:#130341;
+    background-color: rgba(0,255,246,0.03);
 
 }
 

@@ -1,0 +1,62 @@
+class EarleyDevThreeJS extends React.Component {
+    scene = new THREE.Scene();
+    minHeight = 1200;
+    height = window.innerHeight * 2 > this.minHeight ? window.innerHeight * 2 : this.minHeight;
+    width = window.innerWidth;
+    camera = new THREE.PerspectiveCamera(75, this.width / this.height, 0.1, 35000);
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    causticsTexture = new THREE.ImageUtils.loadTexture('caustics.png');
+    floor = new EarleyDevFloor();
+    bubbles = new EarleyDevBubbles();
+    rays = new EarleyDevRays();
+
+    waitForIt = 1 / 24 * 1000;  //42ms;
+    lastUpdate = Date.now();
+
+    componentDidMount() {
+        this.scene.fog = new THREE.FogExp2(new THREE.Color(0x130341), 0.0001);
+        this.renderer.setSize(this.width, this.height);
+        this.mount.appendChild(this.renderer.domElement);
+        this.camera.position.z = 1000;
+        this.scene.add(this.floor.setupFloor());
+        this.scene.add(this.bubbles.setupBubbles());
+        this.scene.add(this.rays.setupRays());
+
+        var animate = () => {
+            requestAnimationFrame(animate);
+            this.rays.updateRays();
+            this.bubbles.updateBubbles();
+            if (Date.now() > this.lastUpdate + this.waitForIt) {
+                this.lastUpdate = Date.now();
+                this.floor.updateFloor();
+            }
+            this.renderer.render(this.scene, this.camera);
+        };
+
+        document.getElementById("scroll-container").addEventListener("wheel", (e) => {
+            this.onScroll(e);
+        });
+
+        document.getElementById("scroll-container").addEventListener("scroll", (e) => {
+            this.onScroll(e);
+        });
+
+        animate();
+    }
+
+    onScroll(e) {
+        this.camera.position.z -= e.deltaY * 0.1;
+    }
+
+    onmousemove = (e) => {
+        this.camera.rotation.y += (e.movementX * 0.0001);
+    }
+
+    render() {
+        return (
+            <div onMouseMove={this.onmousemove} ref={ref => (this.mount = ref)} />
+        )
+    }
+}
+
+ReactDOM.render(<EarleyDevThreeJS />, document.getElementById("earley-dev-threejs-renderer"));

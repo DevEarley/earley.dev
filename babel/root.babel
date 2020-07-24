@@ -1,14 +1,9 @@
 class EarleyDevRoot extends React.Component {
 
-
     header_JSX() {
         return <div>
-            <p />
             <h1>Alex Earley </h1>
-            <p />
             <h2>Software Developer</h2>
-            <p />
-
         </div>
     }
 
@@ -16,20 +11,12 @@ class EarleyDevRoot extends React.Component {
         return <div className="copy">
             Welcome! I am a full stack web developer and designer from Boynton Beach, Florida.
             I have worked on enterprise solutions, mobile apps, developer tools, marketing campaigns, indie games, and wholesale trading platforms.
-            I am proficient with JavaScript, TypeScript, HTML, SCSS and Angular on the front end; C# with .NET and SQL server side. Please see my resume for more information.
+            I am proficient with JavaScript, TypeScript, HTML, SCSS and Angular on the front end; C# with .NET and SQL server side. Please see my <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing">resume</a> for more information.
         </div>
     }
 
     mainMenu_JSX() {
-        return <div id="main-menu">
-            <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing"> Resume </a>
-        </div>
-    }
-
-    photoCredit_JSX() {
-        return <a id="photo-credit" href="https://unsplash.com/@pawel_czerwinski">
-            Amazing background art by Pawel Czerwinski 🎨📸
-    </a>;
+        return <div id="main-menu"></div>
     }
 
     render() {
@@ -37,10 +24,8 @@ class EarleyDevRoot extends React.Component {
             {this.header_JSX()}
             {this.copy_JSX()}
             {this.mainMenu_JSX()}
-            {this.photoCredit_JSX()}
         </div>
     }
-
 }
 
 ReactDOM.render(<EarleyDevRoot />, document.getElementById('root-container'));

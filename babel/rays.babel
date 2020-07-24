@@ -1,0 +1,45 @@
+class EarleyDevRays {
+    rays;
+    rayCount = 20;
+    topRayBound = 1200;
+    bottomRayBound = 1190;
+    rayGeometry = new THREE.Geometry();
+    rayMaterial = new THREE.ParticleBasicMaterial({
+        opacity: (Math.random() * 0.3),
+        color: 0xFFFFFF,
+        size: 1500,
+        map: THREE.ImageUtils.loadTexture(
+            "rays.png"
+        ), depthTest: false,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+    });
+
+    setupRays() {
+        for (var p = 0; p < this.rayCount; p++) {
+            var pX = Math.random() * 10000 - 5000,
+                pY = (Math.random() * (this.topRayBound - this.bottomRayBound)) + this.bottomRayBound,
+                pZ = (Math.random() * 1000 - 500) - 1000,
+                ray = new THREE.Vector3(pX, pY, pZ);
+            ray.velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 0.2,
+                0,
+                0);
+            this.rayGeometry.vertices.push(ray);
+        }
+        this.rays = new THREE.Points(
+            this.rayGeometry,
+            this.rayMaterial)
+        this.rays.sortParticles = true;
+        return this.rays;
+    }
+
+    updateRays() {
+        for (var i = 0; i < this.rayGeometry.vertices.length; i++) {
+            var particle = this.rayGeometry.vertices[i];
+            particle.velocity.x += (Math.random() - 0.5) * 0.2;
+            particle.x += particle.velocity.x;
+        }
+        this.rayGeometry.verticesNeedUpdate = true;
+    }
+}
