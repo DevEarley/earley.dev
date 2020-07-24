@@ -9,9 +9,12 @@ class EarleyDevRoot extends React.Component {
 
     copy_JSX() {
         return <div className="copy">
-            Welcome! I am a full stack web developer and designer from Boynton Beach, Florida.
-            I have worked on enterprise solutions, mobile apps, developer tools, marketing campaigns, indie games, and wholesale trading platforms.
-            I am proficient with JavaScript, TypeScript, HTML, SCSS and Angular on the front end; C# with .NET and SQL server side. Please see my <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing">resume</a> for more information.
+            Welcome! I am a Full stack software developer from Boynton Beach, Florida. I have worked on  enterprise solutions, mobile apps, developer tools, marketing campaigns, and wholesale trading platforms.
+            I have lots of experience with JavaScript, TypeScript, Babel, HTML, SCSS and Angular on the frontend; C# with .NET, SQL, and Entity Framework on the server-side.
+            Also, I have experience with designing UX and indie game development. I specialize in: abstracting problems into manageable tasks, creating features from scratch, and implementing all aspects of a solution.
+            <p>
+                Please see my <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing">resume</a> for more information.
+            </p>
         </div>
     }
 
