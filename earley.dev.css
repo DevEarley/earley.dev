@@ -1,10 +1,14 @@
+html{
+    background: #130341;
+}
 body {
     margin: 0;
-    background: rgb(0,0,0);
+    background: #130341;
     background: linear-gradient(0deg, #130341 50%,  rgba(26,9,121,1) 60%, rgba(0,255,246,1) 100%);
     color: #FFF;
     font-family: sans-serif;
     height:200vh;
+    max-height:200vh;
     min-height: 1300px;
     overflow-x: hidden;
 }

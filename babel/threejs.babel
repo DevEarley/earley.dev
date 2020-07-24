@@ -47,14 +47,26 @@ class EarleyDevThreeJS extends React.Component {
     onScroll(e) {
         this.camera.position.z -= e.deltaY * 0.1;
     }
-
+    lastTouch = 0;
     onmousemove = (e) => {
-        this.camera.rotation.y += (e.movementX * 0.0001);
+        if (e.touches) {
+            if (this.lastTouch == 0) {
+                this.lastTouch = e.touches[0].pageX;
+            }
+            var movement = e.touches[0].pageX - this.lastTouch;
+            this.lastTouch = e.touches[0].pageX;
+            this.camera.rotation.y += (movement * 0.0001);
+
+        }
+        else {
+
+            this.camera.rotation.y += (e.movementX * 0.0001);
+        }
     }
 
     render() {
         return (
-            <div onMouseMove={this.onmousemove} ref={ref => (this.mount = ref)} />
+            <div onMouseMove={this.onmousemove} onTouchMove={this.onmousemove} ref={ref => (this.mount = ref)} />
         )
     }
 }
