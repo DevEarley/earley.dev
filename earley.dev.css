@@ -65,7 +65,7 @@ a{
     max-width: 600px;
     color:#130341;
     background: rgb(0,255,246);
-    background: linear-gradient(0deg, rgba(0,255,246,0.4) 10%, rgba(0,255,246,0.03) 100%);
+    background: linear-gradient(0deg, rgba(0,255,246,0.4) 10%, rgba(0,255,246,0.0) 90%);
 
 }
 
