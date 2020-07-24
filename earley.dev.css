@@ -64,7 +64,8 @@ a{
     padding:40px;
     max-width: 600px;
     color:#130341;
-    background-color: rgba(7,194,215,0.3);
+    background: rgb(0,255,246);
+    background: linear-gradient(0deg, rgba(0,255,246,0.4) 10%, rgba(0,255,246,0.03) 100%);
 
 }
 
