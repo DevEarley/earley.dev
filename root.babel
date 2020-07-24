@@ -3,9 +3,12 @@ class EarleyDevRoot extends React.Component {
 
     header_JSX() {
         return <div>
-            <img id="avatar" src="avatar.png" />
+            <p />
             <h1>Alex Earley </h1>
+            <p />
             <h2>Software Developer</h2>
+            <p />
+
         </div>
     }
 

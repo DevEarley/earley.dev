@@ -1,17 +1,22 @@
 body {
     margin: 0;
     background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(15,0,36,1) 14%, rgba(26,9,121,1) 60%, rgba(0,255,246,1) 100%);
+    background: linear-gradient(0deg, #130341 50%,  rgba(26,9,121,1) 60%, rgba(0,255,246,1) 100%);
     color: #FFF;
     font-family: sans-serif;
-    height:2000px;
-    min-height: 200vh;
+    height:200vh;
     overflow-x: hidden;
 }
 
 h1{
-
+   
+    padding:40px;
 }
+p{
+    height: 40px;
+    background-image: url('pattern_3.png');
+}
+
 
 h2{
 
@@ -26,7 +31,13 @@ h2{
 }
 
 #root-container{
-
+    /* position: absolute;
+    top:0;
+    height: 2000px;
+    left:0;
+    right:0; */
+   
+    
 }
 
 #photo-credit{
