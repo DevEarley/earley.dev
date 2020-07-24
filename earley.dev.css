@@ -7,19 +7,21 @@ body {
     height:200vh;
     min-height: 1300px;
     overflow-x: hidden;
-    position: relative;
 }
 
 h1{
     margin: 0;
     background-color: #130341;
-    color:rgba(0,255,246,1);
-    padding:40px;
-    padding-top:120px;
+    color:FFF;
+    padding-top:100px;
+    padding-bottom:10px;
+    margin-bottom:0;
+    padding-left: 140px;
 }
 
 h2{
-    padding-left:40px;
+    margin-top:10px;
+    padding-left: 140px;
 
     color:#130341;
 
@@ -46,7 +48,13 @@ a{
     
 }
 
-#photo-credit{
+#avatar{
+width: 100px;
+height: 100px;
+position: absolute;
+left:20px;
+top:100px;
+z-index: 2;
 
 }
 
@@ -65,7 +73,7 @@ a{
     max-width: 600px;
     color:#130341;
     background: rgb(0,255,246);
-    background: linear-gradient(0deg, rgba(0,255,246,0.4) 10%, rgba(0,255,246,0.0) 90%);
+    background: linear-gradient(0deg, rgba(0,255,246,0.4) 20%, rgba(0,255,246,0.0) 80%);
 
 }
 
