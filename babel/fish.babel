@@ -1,0 +1,28 @@
+class EarleyDevFish {
+    fishTexture = new THREE.ImageUtils.loadTexture('caustics.png');
+    fishMaterial = new THREE.MeshBasicMaterial({ map: this.fishTexture, side: THREE.DoubleSide });
+
+    setupFish(_scene) {
+        let loader = new OBJLoader2();
+        loader.load(
+
+            'fish.obj',
+
+            function (object) {
+
+                this.fish = new THREE.Mesh(object, this.fishMaterial);
+                _scene.add(this.fish);
+            }.bind(this));
+
+    }
+
+    updateFish() {
+        if (this.fishTexture.offset.x >= 4096) {
+            this.fishTexture.offset.x = 0;
+        } else {
+            this.fishTexture.offset.x += 1 / 16;
+        }
+        this.fishTexture.needsUpdate = true;
+
+    }
+}

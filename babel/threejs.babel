@@ -9,6 +9,7 @@ class EarleyDevThreeJS extends React.Component {
     floor = new EarleyDevFloor();
     bubbles = new EarleyDevBubbles();
     rays = new EarleyDevRays();
+    fish = new EarleyDevFish();
 
     waitForIt = 1 / 24 * 1000;  //42ms;
     lastUpdate = Date.now();
@@ -18,12 +19,14 @@ class EarleyDevThreeJS extends React.Component {
         this.renderer.setSize(this.width, this.height);
         this.mount.appendChild(this.renderer.domElement);
         this.camera.position.z = 1000;
+        this.scene.add(this.fish.setupFish(this.scene));
         this.scene.add(this.floor.setupFloor());
         this.scene.add(this.bubbles.setupBubbles());
         this.scene.add(this.rays.setupRays());
 
         var animate = () => {
             requestAnimationFrame(animate);
+            this.fish.updateFish();
             this.rays.updateRays();
             this.bubbles.updateBubbles();
             if (Date.now() > this.lastUpdate + this.waitForIt) {
@@ -45,7 +48,7 @@ class EarleyDevThreeJS extends React.Component {
     }
 
     onScroll(e) {
-        this.camera.position.z -= e.deltaY * 0.1;
+        this.camera.position.z += e.deltaY * 0.1;
     }
     lastTouch = null;
     onmousemove = (e) => {
