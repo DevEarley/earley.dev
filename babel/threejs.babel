@@ -1,9 +1,9 @@
 class EarleyDevThreeJS extends React.Component {
     scene = new THREE.Scene();
-    minHeight = 1200;
-    height = window.innerHeight * 1.5 > this.minHeight ? window.innerHeight * 1.5 : this.minHeight;
+
+    height = window.innerHeight;
     width = window.innerWidth;
-    camera = new THREE.PerspectiveCamera(75, this.width / this.height, 0.1, 35000);
+    camera = new THREE.PerspectiveCamera(70, this.width / this.height, 0.1, 35000);
     renderer = new THREE.WebGLRenderer({ alpha: true });
     causticsTexture = new THREE.ImageUtils.loadTexture('caustics.png');
     floor = new EarleyDevFloor();
@@ -18,7 +18,7 @@ class EarleyDevThreeJS extends React.Component {
         this.scene.fog = new THREE.FogExp2(new THREE.Color(0x130341), 0.0001);
         this.renderer.setSize(this.width, this.height);
         this.mount.appendChild(this.renderer.domElement);
-        this.camera.position.z = 1000;
+        this.camera.position.z = 1200;
         // this.scene.add(this.fish.setupFish(this.scene));
         this.scene.add(this.floor.setupFloor());
         this.scene.add(this.bubbles.setupBubbles());
@@ -48,36 +48,36 @@ class EarleyDevThreeJS extends React.Component {
     }
 
     onScroll(e) {
-        this.camera.position.z += e.deltaY * 0.1;
+        //   this.camera.position.z += e.deltaY * 0.1;
     }
     lastTouch = null;
     onmousemove = (e) => {
-        var movement;
-        var position;
-        var range = 1500;
-        var xOffset = -1000;
-        if (e.touches) {
-            if (this.lastTouch == null) {
-                this.lastTouch = [e.touches[0].pageX, e.touches[0].pageX];
-            }
-            position = [e.touches[0].pageX + xOffset, e.touches[0].pageY];
-            movement = [e.touches[0].pageX - this.lastTouch[0], 0];
-            this.lastTouch = [e.touches[0].pageX, e.touches[0].pageX];
-        }
-        else {
-            position = [e.pageX + xOffset, e.pageY];
-            movement = [e.movementX, e.movementY];
-        }
+        // var movement;
+        // var position;
+        // var range = 1500;
+        // var xOffset = -1000;
+        // if (e.touches) {
+        //     if (this.lastTouch == null) {
+        //         this.lastTouch = [e.touches[0].pageX, e.touches[0].pageX];
+        //     }
+        //     position = [e.touches[0].pageX + xOffset, e.touches[0].pageY];
+        //     movement = [e.touches[0].pageX - this.lastTouch[0], 0];
+        //     this.lastTouch = [e.touches[0].pageX, e.touches[0].pageX];
+        // }
+        // else {
+        //     position = [e.pageX + xOffset, e.pageY];
+        //     movement = [e.movementX, e.movementY];
+        // }
 
-        for (var i = 0; i < this.bubbles.bubbleGeometry.vertices.length; i++) {
-            var bubbleVert = this.bubbles.bubbleGeometry.vertices[i];
-            if (bubbleVert.x < position[0] + range && bubbleVert.x > position[0] - range) {
-                bubbleVert.velocity.x += (movement[0] * 0.01);
-                bubbleVert.velocity.y += (movement[1] * 0.01);
-                // if (bubbleVert.y < position[1] + range && bubbleVert.y > position[1] - range) {
-                // }
-            }
-        }
+        // for (var i = 0; i < this.bubbles.bubbleGeometry.vertices.length; i++) {
+        //     var bubbleVert = this.bubbles.bubbleGeometry.vertices[i];
+        //     if (bubbleVert.x < position[0] + range && bubbleVert.x > position[0] - range) {
+        //         bubbleVert.velocity.x += (movement[0] * 0.01);
+        //         bubbleVert.velocity.y += (movement[1] * 0.01);
+        //         // if (bubbleVert.y < position[1] + range && bubbleVert.y > position[1] - range) {
+        //         // }
+        //     }
+        // }
         //if (this.floor.floor != undefined)
         //this.floor.floor.rotation.y += (movement[0] * 0.01);
         //this.floor.floorGeometry.needsUpdate = true;

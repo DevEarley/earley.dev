@@ -1,1 +1,1 @@
-./rp.cmd 1234
+http-server -a localhost -p 1234 -o

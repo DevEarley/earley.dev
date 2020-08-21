@@ -1,7 +1,7 @@
 class EarleyDevFloor {
     floorTexture = new THREE.ImageUtils.loadTexture('sand_w_caustics.png');
     floorMaterial = new THREE.MeshBasicMaterial({ map: this.floorTexture, side: THREE.DoubleSide });
-    floorGeometry = new THREE.PlaneGeometry(40000, 20000, 1, 1);
+    floorGeometry = new THREE.PlaneGeometry(60000, 20000, 1, 1);
     floor = new THREE.Mesh(this.floorGeometry, this.floorMaterial);
 
     setupFloor() {

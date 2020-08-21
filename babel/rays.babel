@@ -38,6 +38,8 @@ class EarleyDevRays {
         for (var i = 0; i < this.rayGeometry.vertices.length; i++) {
             var particle = this.rayGeometry.vertices[i];
             particle.velocity.x += (Math.random() - 0.5) * 0.2;
+            if (particle.velocity.x > 0.2) particle.velocity.x = 0.2;
+            if (particle.velocity.x < -0.2) particle.velocity.x = -0.2;
             particle.x += particle.velocity.x;
         }
         this.rayGeometry.verticesNeedUpdate = true;

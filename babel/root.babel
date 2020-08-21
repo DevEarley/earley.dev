@@ -3,13 +3,13 @@ class EarleyDevRoot extends React.Component {
     header_JSX() {
         return <div>
             <img id="avatar" src="avatar.png" />
-            <h1>Alex Earley </h1>
-            <h2>Software Developer</h2>
+            <h1 class="title">Alex Earley </h1>
+            <h2 id="subtitle">Software Developer</h2>
         </div>
     }
 
     copy_JSX() {
-        return <div className="copy">
+        return <div className="copy" id="topcopy">
             <strong>Welcome!</strong> I am a full stack software developer from <b>Boynton Beach, Florida</b>. I have worked on  enterprise solutions, mobile apps, developer tools, marketing campaigns, and wholesale trading platforms.
             I have lots of experience with <b>JavaScript, TypeScript, Babel, HTML, SCSS</b> and <b>Angular</b> on the frontend; <b>C#</b> with <b>.NET, SQL,</b> and <b>Entity Framework</b> on the server-side.
             Also, I have experience with designing UX and indie game development. I specialize in: abstracting problems into manageable tasks, creating features from scratch, and implementing all aspects of a solution.
