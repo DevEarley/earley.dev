@@ -28,55 +28,15 @@
     <script type="text/babel" src="babel/floor.babel"></script>
     <script type="text/babel" src="babel/threejs.babel"></script>
     <script type="text/babel" src="babel/root.babel"></script>
-    <script type="text/javascript">
-        let files = ['8-18-20.md', '8-20-20.md', '8-25-20.md', '8-27-20.md'];
-        let converter = new showdown.Converter();
-        let entries = [];
-        function updateBlog() {
-            let blog = document.getElementById("blog");
-            if (blog != null) {
-                blog.innerHTML = "";
-                var sortedEntries = entries.sort(function (a, b) {
-                    return (a.url < b.url) ? 1 : -1;
-                });
-                for (var i = 0; i < sortedEntries.length; i++) {
-                    blog.innerHTML += "<div class='copy'>"
-                        + sortedEntries[i].html
-                        + "<!--" + sortedEntries[i].url + "-->"
-                        + "<br/>"
-                        + "<div class='signature'>- DevEarley</div>"
-                        + "<hr/>"
-                        + "</div>";
-                }
-            }
-        }
-        for (var f = 0; f < files.length; f++) {
-            let client = new XMLHttpRequest();
-            client.open('GET', './' + files[f]);
-            client.send();
-            client.onreadystatechange = function () {
-                if (client.readyState != 4) return;
-                let html = converter.makeHtml(client.responseText);
-                entries.push({
-                    html: html,
-                    url: client.responseURL
-                });
-                updateBlog();
-
-            }
-        }
-    </script>
+    <script type="text/javascript" src="./microblog.js"></script>
     <link href="earley.dev.css" rel="stylesheet" />
 </head>
 
 <body id="scroll-container">
     <div id="earley-dev-threejs-renderer"></div>
-    <div
-         style="position: absolute; z-index: 1; left: 0; right:0; bottom: 0; top:0; overflow-y: scroll;">
+    <div class="site-container">
         <div id="root-container"></div>
-
-        <div id="blog"></div>
-
+        <div id="MicroBlog"></div>
     </div>
 </body>
 

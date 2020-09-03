@@ -75,7 +75,7 @@ strong {
     color: #FFF;
 }
 
-#blog {
+#MicroBlog {
     margin-top: 200px;
     font-size: 24px;
     font-family: 'Rancho';
@@ -83,7 +83,7 @@ strong {
     color: #FFF;
 }
 
-#blog .copy {
+#MicroBlog .copy {
     background: #103a9c85
 }
 
@@ -136,4 +136,14 @@ strong {
     strong {
         font-size: 24px;
     }
+}
+
+.site-container {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow-y: scroll;
 }
