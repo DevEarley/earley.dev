@@ -51,10 +51,10 @@
         },1000);
         for (let f = 0; f < _files.length; f++) {
             let client = new XMLHttpRequest();
-            client.open('GET', './' + _files[f].path);
-            client.send();
             const file = _files[f];
             const _index = file.index;
+            client.open('GET', './' + _files[f].path);
+            client.send();
             client.onreadystatechange = function () {
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
