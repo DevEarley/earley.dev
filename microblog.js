@@ -15,13 +15,10 @@
         if (blog != null) {
             blog.innerHTML = "";
 
-            let sortedEntries = _entries.sort(function (a, b) {
-                return (getIndex(a.url, _entries, _files) < getIndex(b.url, _entries, _files)) ? -1 : 1;
-            });
-            for (let i = 0; i < sortedEntries.length; i++) {
+            for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
-                    + sortedEntries[i].html
-                    + "<!--" + sortedEntries[i].url + "-->"
+                    + _entries[i].html
+                    + "<!--" + _entries[i].url + "-->"
                     + "<br/>"
                     + "<div class='signature'>- DevEarley</div>"
                     + "<hr/>"
