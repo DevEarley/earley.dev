@@ -1,10 +1,10 @@
 (function () {
     let files = [
-        index:1,path:'9-11-21.md',
-        index:2,path:'9-2-20.md',
-        index:3,path:'8-25-20.md',
-        index:4,path:'8-20-20.md',
-        index:5,path:'8-18-20.md',
+        { index:1,path:'9-11-21.md'},
+        {index:2,path:'9-2-20.md'},
+        { index:3,path:'8-25-20.md'},
+        {index:4,path:'8-20-20.md'},
+        {index:5,path:'8-18-20.md'},
     ];
     let converter = new showdown.Converter();
     let entries = [];
