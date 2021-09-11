@@ -54,7 +54,7 @@
             client.onreadystatechange = function () {
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
-                let url = await client.responseURL;
+                let url = client.responseURL;
                 _entries.push({
                     html: html,
                     url: url, 
