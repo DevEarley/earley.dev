@@ -6,6 +6,7 @@
         '8-25-20.md',
         '8-20-20.md',
         '8-18-20.md',
+        '9-11-21.md',
     ];
     let converter = new showdown.Converter();
     let entries = [];
