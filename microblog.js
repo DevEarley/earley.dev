@@ -14,7 +14,7 @@
         let blog = document.getElementById("MicroBlog");
         if (blog != null) {
             blog.innerHTML = "";
-
+            _entries = _entries.sort((a,b)=>a.id<b.id)
             for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
                     + _entries[i].html
@@ -54,10 +54,11 @@
             client.onreadystatechange = function () {
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
-                let url = client.responseURL;
+                let url = await client.responseURL;
                 _entries.push({
                     html: html,
-                    url: url
+                    url: url, 
+                    index:f
                 });
                 if (_entries.length == _files.length) {
                     updateBlog(_entries, _files);
