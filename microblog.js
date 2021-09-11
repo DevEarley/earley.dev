@@ -45,6 +45,9 @@
     }
 
     function init(_entries, _files, _converter) {
+        setTimeout(()=>{
+             updateBlog(_entries,_files);
+        },5000);
         for (let f = 0; f < _files.length; f++) {
             let client = new XMLHttpRequest();
             client.open('GET', './' + _files[f]);
@@ -58,9 +61,7 @@
                     url: url, 
                     index:f
                 });
-                if (_entries.length == _files.length) {
-                    updateBlog(_entries, _files);
-                }
+              
             }
         }
     }
