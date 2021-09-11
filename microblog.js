@@ -52,7 +52,8 @@
             let client = new XMLHttpRequest();
             client.open('GET', './' + _files[f].path);
             client.send();
-            const _index = file[f].index;
+            const file = _files[f];
+            const _index = file.index;
             client.onreadystatechange = function () {
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
