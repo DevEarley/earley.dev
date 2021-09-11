@@ -12,7 +12,8 @@
         let blog = document.getElementById("MicroBlog");
         if (blog != null) {
             blog.innerHTML = "";
-            _entries = _entries.sort((a,b)=>a.index<b.index)
+            _entries = _entries.sort((a,b)=>a.index<b.index);
+            console.log(_entries)
             for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
                     + _entries[i].html
@@ -58,11 +59,13 @@
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
                 let url = client.responseURL;
-                _entries.push({
+                let entry = {
                     html: html,
                     url: url, 
                     index: _index
-                });
+                };
+                console.log(entry);
+                _entries.push(entry);
               
             }
         }
