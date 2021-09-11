@@ -14,7 +14,7 @@
         let blog = document.getElementById("MicroBlog");
         if (blog != null) {
             blog.innerHTML = "";
-            _entries = _entries.sort((a,b)=>a.id<b.id)
+            _entries = _entries.sort((a,b)=>a.index<b.index)
             for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
                     + _entries[i].html
