@@ -1,10 +1,10 @@
 (function () {
     let files = [
-        '9-11-21.md',
-        '9-2-20.md',
-        '8-25-20.md',
-        '8-20-20.md',
-        '8-18-20.md',
+        index:1,path:'9-11-21.md',
+        index:2,path:'9-2-20.md',
+        index:3,path:'8-25-20.md',
+        index:4,path:'8-20-20.md',
+        index:5,path:'8-18-20.md',
     ];
     let converter = new showdown.Converter();
     let entries = [];
@@ -47,11 +47,12 @@
     function init(_entries, _files, _converter) {
         setTimeout(()=>{
              updateBlog(_entries,_files);
-        },5000);
+        },1000);
         for (let f = 0; f < _files.length; f++) {
             let client = new XMLHttpRequest();
-            client.open('GET', './' + _files[f]);
+            client.open('GET', './' + _files[f].path);
             client.send();
+            const _index = file[f].index;
             client.onreadystatechange = function () {
                 if (client.readyState != 4) return;
                 let html = _converter.makeHtml(client.responseText);
@@ -59,7 +60,7 @@
                 _entries.push({
                     html: html,
                     url: url, 
-                    index:f
+                    index: _index
                 });
               
             }
