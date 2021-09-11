@@ -1,12 +1,12 @@
 (function () {
     let files = [
+        '9-11-21.md',
         '9-16-20.md',
         '9-2-20.md',
         '8-27-20.md',
         '8-25-20.md',
         '8-20-20.md',
         '8-18-20.md',
-        '9-11-21.md',
     ];
     let converter = new showdown.Converter();
     let entries = [];
