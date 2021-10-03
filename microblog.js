@@ -9,7 +9,7 @@
         let blog = document.getElementById("MicroBlog");
         if (blog != null) {
             blog.innerHTML = "";
-            _entries = _entries.sort((a,b)=>a.index<b.index);
+            _entries = _entries.sort((a,b)=>a.index-b.index);
             console.log(_entries)
             for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
