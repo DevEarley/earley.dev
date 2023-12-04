@@ -12,7 +12,7 @@ class EarleyDevArticles extends React.Component{
 		super();
 		console.log("EarleyDevArticles | constructor");
 		const xhr = new XMLHttpRequest();
-		xhr.open('GET', '../articles.json', true);
+		xhr.open('GET', 'https://devearley.github.io/earley.dev/articles.json', true);
 		xhr.onload = (e)=>{
 				console.log(this.responseText);
 				let _articles = JSON.parse(xhr.responseText);
