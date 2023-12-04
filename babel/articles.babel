@@ -39,20 +39,22 @@ class EarleyDevArticles extends React.Component{
 
 	buildRow(article){
 		console.log("build Row");
-		return (<tr key={article.name}>
+		return (<tr>
 			<td><img src={"images/source-"+article.source +".png"}/></td>
 			<td><a href={article.link}>{article.name}</a></td>
 			</tr>);
 	}
 
 	render(){
-		return( <div id="articles-container">
+		return( <div id="articles-container" key="articles-container">
 				<h1>Articles</h1>
 					<label id="search-input-label" htmlFor="search-input">Search Articles</label>
 					<input id="search-input" placeholder="Search Articles" type="text" />
+					<table>
 					{this.state.articles.map((article) => (
-       					<table>{this.buildRow(article)}</table>
+       					<tbody key={article.name}>{this.buildRow(article)}</tbody>
       				))}
+					</table>
 			</div>);
 	}
 

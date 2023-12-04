@@ -9,7 +9,7 @@ font-family: 'Staatliches', cursive; */
 
 html {
     background: #130341; 
-       font-family: sans-serif;
+       font-family: sans-serif;   min-width: 700px;
 }
 
 body {
@@ -157,7 +157,7 @@ input:hover{
 #main-menu {}
 
 #earley-dev-threejs-renderer {
-    position: absolute;
+    position: fixed;
 }
 
 img{width:100%}
@@ -172,7 +172,7 @@ img{width:100%}
     bottom: 0;
     top: 0;
     overflow-y: scroll;
-    min-width: 788px;
+    min-width: 700px;
 }
 
 #featured-blogs #MicroBlog {
@@ -218,15 +218,10 @@ padding: 0;}
         margin-right: 80px;
         padding: 20px;
     }
-    b {
-        font-size: 22px;
-    }
-    strong {
-        font-size: 24px;
-    }
+ 
     #navigation {
         position: absolute;
-        right: 80px;
+        right: 20px;
         top: 20px;
         z-index: 2;
   }
