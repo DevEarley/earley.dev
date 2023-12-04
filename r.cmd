@@ -1,1 +1,0 @@
-http-server -a localhost -p 1234 -o

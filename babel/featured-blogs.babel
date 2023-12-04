@@ -1,0 +1,26 @@
+class EarleyFeaturedBlogs extends React.Component {
+    scene = new THREE.Scene();
+    files = [
+        { index:0,path:'blogs/12-2-23-preview.md'} ,
+        { index:1,path:'blogs/10-3-21-preview.md'} ,
+        { index:2,path:'blogs/9-11-21-preview.md'} ,
+    ];
+    converter = new showdown.Converter();
+    entries = [];
+    componentDidMount() {
+    console.log("EarleyBlog | componentDidMount");
+    let mb =  new MicroBlog();
+    mb.init(this.files, this.converter,this.entries);
+    
+	 }
+      render() {
+        return (
+        <div id="featured-blogs">
+          <h1>Featured Blog Articles</h1>
+          <div id="MicroBlog"></div>
+        </div>
+        )
+    }
+}
+
+ReactDOM.render(<EarleyFeaturedBlogs />, document.getElementById("blog"));

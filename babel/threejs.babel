@@ -5,7 +5,7 @@ class EarleyDevThreeJS extends React.Component {
     width = window.innerWidth;
     camera = new THREE.PerspectiveCamera(70, this.width / this.height, 0.1, 35000);
     renderer = new THREE.WebGLRenderer({ alpha: true });
-    causticsTexture = new THREE.ImageUtils.loadTexture('caustics.png');
+    causticsTexture = new THREE.ImageUtils.loadTexture('images/caustics.png');
     floor = new EarleyDevFloor();
     bubbles = new EarleyDevBubbles();
     rays = new EarleyDevRays();
@@ -15,6 +15,12 @@ class EarleyDevThreeJS extends React.Component {
     lastUpdate = Date.now();
 
     componentDidMount() {
+        window.addEventListener('resize', (()=>{
+           this.width = window.innerWidth;
+          this.height = window.innerHeight;
+           this.camera = new THREE.PerspectiveCamera(70, this.width / this.height, 0.1, 35000);
+          this.renderer.setSize(this.width, this.height);
+        }));
         this.scene.fog = new THREE.FogExp2(new THREE.Color(0x130341), 0.0001);
         this.renderer.setSize(this.width, this.height);
         this.mount.appendChild(this.renderer.domElement);

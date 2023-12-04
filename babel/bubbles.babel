@@ -8,7 +8,7 @@ class EarleyDevBubbles {
         color: 0xFFFFFF,
         size: 20,
         map: THREE.ImageUtils.loadTexture(
-            "bubble.png"
+            "images/bubble.png"
         ), depthTest: false,
         blending: THREE.AdditiveBlending,
         transparent: true

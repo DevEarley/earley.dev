@@ -1,15 +1,15 @@
 class EarleyDevRays {
     rays;
     rayCount = 20;
-    topRayBound = 1200;
-    bottomRayBound = 1190;
+    topRayBound = 1140;
+    bottomRayBound = 1130;
     rayGeometry = new THREE.Geometry();
     rayMaterial = new THREE.ParticleBasicMaterial({
         opacity: (Math.random() * 0.3),
         color: 0xFFFFFF,
-        size: 1500,
+        size: 1600,
         map: THREE.ImageUtils.loadTexture(
-            "rays.png"
+            "images/rays.png"
         ), depthTest: false,
         blending: THREE.AdditiveBlending,
         transparent: true

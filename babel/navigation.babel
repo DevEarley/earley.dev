@@ -1,0 +1,12 @@
+class EarleyDevNavigation extends React.Component {
+	render(){
+		return (
+			<div id="navigation" role="navigation">
+				<a href="/index.html#articles">Articles</a>
+				<a href="/blog.html">Blog</a>
+				<a href="mailto:alex@earley.dev">Email</a>
+				<a href="./resume.pdf">Resume</a>
+			</div>
+		);}
+}
+ReactDOM.render(<EarleyDevNavigation />, document.getElementById("navigation-container"));

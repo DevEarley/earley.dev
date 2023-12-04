@@ -1,1 +1,0 @@
-watch-http-server -o -a localhost -p "%*"

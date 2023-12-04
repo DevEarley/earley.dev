@@ -8,7 +8,8 @@ font-family: 'Rancho', cursive;
 font-family: 'Staatliches', cursive; */
 
 html {
-    background: #130341;
+    background: #130341; 
+       font-family: sans-serif;
 }
 
 body {
@@ -19,7 +20,6 @@ body {
     font-family: sans-serif;
     height: 100vh;
     max-height: 100vh;
-    overflow: hidden;
 }
 
 .title {
@@ -30,61 +30,115 @@ body {
     padding-top: 66px;
     padding-bottom: 10px;
     margin-bottom: 0;
-    padding-left: 180px;
+    padding-left: 210px;
 }
 
 #subtitle {
     margin-top: 10px;
-    padding-left: 180px;
-    font-family: 'Rancho';
+    padding-left: 210px;
+ 
     font-size: 36px;
     color: #130341;
 }
 
-h1 {
-    margin-top: 50px;
+h1 { 
+    padding: 40px;
+     background: rgb(13,3,41);
+background: linear-gradient(180deg, rgba(13,3,41,0.2) 63%, rgba(19,3,65,0.5) 100%); 
 }
+
+.copy h1{
+padding:0;
+margin:0;
+background:none;
+}
+
+#articles-container{
+max-width: 1200px;
+    margin: 40px;
+    padding: 40px;
+   background: rgb(13,3,41);
+background: linear-gradient(180deg, rgba(13,3,41,0.2) 63%, rgba(19,3,65,0.5) 100%); 
+    }
+
+ #articles-container h1{
+ padding:0;
+margin:0;
+   margin-bottom: 40px;
+background:none;
+ }
 
 a {
     color: #fff;
-    font-size: 24px;
-    font-family: 'Staatliches';
+    font-size: 12pt;
 }
 
 b {
-    font-family: 'Staatliches';
-    font-size: 24px;
+    font-size: 12pt;
 }
 
 strong {
-    font-family: 'Staatliches';
-    font-size: 28px;
+    font-size: 12pt;
 }
 
 #topcopy {
-    background: rgb(0, 255, 246);
-    background: linear-gradient(0deg, #0095ff66 20%, #00fff614 80%);
+    z-index: 1;
+ background: rgb(13,3,41);
+background: linear-gradient(180deg, rgba(13,3,41,0.2) 63%, rgba(19,3,65,0.5) 100%); 
+}
+
+#navigation {
+  position: absolute;
+  right: 40px;
+  top: 70px;
+  z-index: 2;
+  }
+ 
+  #navigation a{
+  padding-left:20px;
 }
 
 .copy {
     margin: 40px;
     padding: 40px;
-    font-size: 24px;
-    font-family: 'Rancho';
+    font-size: 12pt;
     max-width: 1200px;
     color: #FFF;
 }
 
 #MicroBlog {
-    margin-top: 200px;
-    font-size: 24px;
-    font-family: 'Rancho';
-    max-width: 1200px;
+    
+    font-size: 12pt;
     color: #FFF;
 }
 
 #MicroBlog .copy {
-    background: #103a9c85
+ background: rgb(13,3,41);
+background: linear-gradient(180deg, rgba(13,3,41,0.2) 63%, rgba(19,3,65,0.5) 100%); 
+}
+
+#search-input-label{
+display:block;}
+
+input {
+
+    width: calc(100% - 80px);
+ background: rgba(26, 9, 121, 1);
+    font-size: 12pt;
+    color: #FFF;
+    padding: 20px;
+    margin:20px;
+    border: 0;
+    border-radius: 10px;
+    outline: 1px solid #ffffff25;
+}
+
+input:focus{
+    outline: 1px solid #ffffff85;
+}
+
+input:hover{
+    outline: 1px solid white;
 }
 
 #root-container {
@@ -92,11 +146,11 @@ strong {
 }
 
 #avatar {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     left: 40px;
-    top: 70px;
+    top: 50px;
     z-index: 2;
 }
 
@@ -110,7 +164,38 @@ img{width:100%}
 
 .icon {}
 
-@media only screen and (max-width: 768px) {
+.site-container {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow-y: scroll;
+    min-width: 788px;
+}
+
+#featured-blogs #MicroBlog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:stretch;
+    flex-direction: row;
+}
+
+#featured-blogs  #MicroBlog .copy {
+ width: 1%;;
+    flex:auto;
+    border-radius: 20px;
+ outline: 1px solid white;
+}
+#featured-blogs  #MicroBlog .copy img{
+max-width: 240px;;}
+#featured-blogs #MicroBlog .copy h1 {
+font-size: 25pt;
+margin: 0;
+padding: 0;}
+@media only screen and (max-width: 1000px) {
     #avatar {
         width: 60px;
         height: 60px;
@@ -129,7 +214,8 @@ img{width:100%}
         font-size: 32px;
     }
     .copy {
-        margin: 10px;
+        margin-left: 10px;
+        margin-right: 80px;
         padding: 20px;
     }
     b {
@@ -138,14 +224,18 @@ img{width:100%}
     strong {
         font-size: 24px;
     }
-}
+    #navigation {
+        position: absolute;
+        right: 80px;
+        top: 20px;
+        z-index: 2;
+  }
+  #featured-blogs #MicroBlog {
+        flex-direction: column;  margin-right: 80px;
+    }
+    
+#featured-blogs  #MicroBlog .copy {
+  width:100%;
 
-.site-container {
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    overflow-y: scroll;
+}
 }

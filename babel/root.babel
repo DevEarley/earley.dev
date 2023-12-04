@@ -1,33 +1,15 @@
 class EarleyDevRoot extends React.Component {
-
     header_JSX() {
         return <div>
-            <img id="avatar" src="avatar.png" />
-            <h1 className="title">Alex Earley </h1>
-            <h2 id="subtitle">Software Developer</h2>
+            <img id="avatar" src="images/avatar.png" alt="A photo of Alex and Charlotte Earley"/>
+            <h1 className="title" role ="title">Earley Dev Studio</h1>
+            <h2 id="subtitle" role="subtitle">Software Development Professionals</h2>
         </div>
-    }
-
-    copy_JSX() {
-        return <div className="copy" id="topcopy">
-            <strong>Welcome!</strong> I am a full stack software developer from <b>Boynton Beach, Florida</b>. I have worked on  enterprise solutions, mobile apps, developer tools, marketing campaigns, and wholesale trading platforms.
-            I have lots of experience with <b>JavaScript, TypeScript, Babel, HTML, SCSS</b> and <b>Angular</b> on the frontend; <b>C#</b> with <b>.NET, SQL,</b> and <b>Entity Framework</b> on the server-side.
-            Also, I have experience with designing UX and indie game development. I specialize in: abstracting problems into manageable tasks, creating features from scratch, and implementing all aspects of a solution.
-            <br />
-            <br />
-            Please see my <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing">resume</a> for more information.
-        </div>
-    }
-
-    mainMenu_JSX() {
-        return <div id="main-menu"></div>
     }
 
     render() {
         return <div id="root">
             {this.header_JSX()}
-            {this.copy_JSX()}
-            {this.mainMenu_JSX()}
         </div>
     }
 }
