@@ -2,36 +2,50 @@
 	{
 		"name":"Delegate Pattern in Unity3D",
 		"link":"https://gist.github.com/DevEarley/84eae6b63027de3fe597000046e9a6af",
-		"source":"gist"
+		"source":"gist",
+		"date":"10/10/2022",
+		"tags":["Unity3D", "C#","Patterns & Best Practices","Game Development"]
 	},
 	{
 		"name":"A guide for making 32 Bit Style games",
 		"link":"https://docs.google.com/document/d/1rKszjsb7PCYb0Y1KD_rFotaFwIQt8_KjinDN5QUyCUQ/edit?usp=sharing",
-		"source":"gdocs"
+		"source":"gdocs",
+		"date":"12/1/23",
+		"tags":["Game Development","Patterns & Best Practices","32 Bit Jam"]
 	},
 	{
 		"name":"History of the 32 Bit Jam",
 		"link":"https://docs.google.com/document/d/1CGwiv6-DoAZwx4dJcZRmRRQSuX22hwb7UcizAEP6lUs/edit?usp=sharing",
-		"source":"gdocs"
+		"source":"gdocs",
+		"date":"12/2/23",
+		"tags":["Game Development","32 Bit Jam"]
 	},
 	{
 		"name":"Building Blocks of Unity3D Programming",
 		"link":"https://gist.github.com/DevEarley/3eaa34c3a75db8723da96c9b6443dce2",
-		"source":"gist"
+		"source":"gist",
+		"date":"7/3/23",
+		"tags":["Unity3D", "C#","Patterns & Best Practices","Game Development"]
 	},
 	{
 		"name":	"Removing the canvas texture from a scanned painting",
 		"link":	"./blog.html?article=9-11-21.md",
-		"source":"blog"
+		"source":"blog",
+		"date":"9/11/21",
+		"tags":["Art"]
 	},
 	{
 		"name":	"PyraMaze Devlog and Retrospective - September 2021 Release",
 		"link":	"./blog.html?article=10-3-21.md",
-		"source":"blog"
+		"source":"blog",
+		"date":"10/3/21",
+		"tags":["32 Bit Jam","Game Development","Dev Log","Retrospective"]
 	},
 	{
 		"name":	"32BitJam is a go!!",
 		"link":	"./blog.html?article=12-2-23.md",
-		"source":"blog"
+		"source":"blog",
+		"date":"12/2/23",
+		"tags":["32 Bit Jam","Game Development"]
 	}
 ]

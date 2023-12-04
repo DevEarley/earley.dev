@@ -1,6 +1,7 @@
 //render article search
 class EarleyDevArticles extends React.Component{
 	searchInput;
+	searchInputValue;
 	articlesElement;
 
 	state={
@@ -14,7 +15,7 @@ class EarleyDevArticles extends React.Component{
 		const xhr = new XMLHttpRequest();
 		xhr.open('GET', 'https://devearley.github.io/earley.dev/articles.json', true);
 		xhr.onload = (e)=>{
-				console.log(this.responseText);
+				if(xhr.status!=200){console.error("PROBLEM LOADING ARTICLES");}
 				let _articles = JSON.parse(xhr.responseText);
 				this.setState({
 					articles:_articles,
@@ -28,13 +29,25 @@ class EarleyDevArticles extends React.Component{
 		console.log("EarleyDevArticles | componentDidMount");
 		this.searchInput = document.getElementById("search-input");
 		this.articlesElement = document.getElementById("articles");
-		this.searchInput.onkeyup = this.onSearch();
-		this.searchInput.onblur = this.onSearch();
+		this.searchInput.onkeyup = (e)=>this.onSearch(e) ;
+		this.searchInput.onblur =  (e)=>this.onSearch(e);
+		
+	}
+
+	filteredArticlesSearchPredicate(article){
+		return article.name.includes(this.searchInputValue )
+		|| article.link.includes(this.searchInputValue);
+		//|| article.date.includes(this.searchInputValue)
+	//	|| article.tags.includes(this.searchInputValue);
 	}
 
 	onSearch() {
-		let searchValue = this.searchInput.value;
-		console.log("EarleyDevArticles | componentDidMount | "+ searchValue);
+		this.searchInputValue  = this.searchInput.value;
+		console.log("EarleyDevArticles | onSearch | "+ this.searchInputValue );
+		this.setState({...this.state,
+					filteredArticles:this.state.articles.filter((article)=>
+						this.filteredArticlesSearchPredicate(article))
+				});
 	}
 
 	buildRow(article){
@@ -51,7 +64,7 @@ class EarleyDevArticles extends React.Component{
 					<label id="search-input-label" htmlFor="search-input">Search Articles</label>
 					<input id="search-input" placeholder="Search Articles" type="text" />
 					<table>
-					{this.state.articles.map((article) => (
+					{this.state.filteredArticles.map((article) => (
        					<tbody key={article.name}>{this.buildRow(article)}</tbody>
       				))}
 					</table>
