@@ -2,10 +2,10 @@ class EarleyDevNavigation extends React.Component {
 	render(){
 		return (
 			<div id="navigation" role="navigation">
-				<a href="./index.html#articles">Articles</a>
-				<a href="./blog.html">Blog</a>
+				<a href="https://devearley.github.io/earley.dev/index.html#articles">Articles</a>
+				<a href="https://devearley.github.io/earley.dev/blog.html">Blog</a>
 				<a href="mailto:alex@earley.dev">Email</a>
-				<a href="./resume.pdf">Resume</a>
+				<a href="https://devearley.github.io/earley.dev/resume.pdf">Resume</a>
 			</div>
 		);}
 }
