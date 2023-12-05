@@ -13,5 +13,5 @@ class EarleyDevRoot extends React.Component {
         </div>
     }
 }
-
-ReactDOM.render(<EarleyDevRoot />, document.getElementById('root-container'));
+let root = ReactDOM.createRoot( document.getElementById('root-container'));
+root.render(<EarleyDevRoot />);

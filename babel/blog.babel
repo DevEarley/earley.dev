@@ -1,35 +1,32 @@
 class EarleyBlog extends React.Component {
-    scene = new THREE.Scene();
-    files = [
-        { index:0,path:'blogs/12-2-23.md'} ,
-        { index:1,path:'blogs/10-3-21.md'} ,
-        { index:2,path:'blogs/9-11-21.md'} ,
-    ];
-    converter = new showdown.Converter();
-    entries = [];
-    componentDidMount() {
+    file = "";
 
-    let search = window.location.search;
-    let params = new URLSearchParams(search);
-    let blog = params.get('blog');
-    if(blog == null || blog == undefinded){
-    blog = "";
+    componentWillUnmount(){
+      console.log("EarleyBlog | componentWillUnmount ");
+    }
+    
+    getFilenameFromURL(){
+      let search = window.location.search;
+      let params = new URLSearchParams(search);
+      let blog = params.get('blog');
+      if(blog == null || blog == undefinded){
+        blog = "";
+      }
+      return blog;
     }
 
-    console.log("EarleyBlog | componentDidMount | "+blog);
-  
-    let mb =  new MicroBlog();
-
-    mb.init(this.files, this.converter,this.entries);
+    componentDidMount() {
+      let filename = this.getFilenameFromURL();
+      console.log("EarleyBlog | componentDidMount | " + blog);
+     microBlogContainer.initFile(filename);
+     
 	 }
-      render() {
+
+    render() {
         return (
-        <div>
-          <h1>Blog</h1>
-          <div id="MicroBlog"></div>
-        </div>
+          <div id="blog">
+            <div id="MicroBlog"></div>
+          </div>
         )
     }
 }
-
-ReactDOM.render(<EarleyBlog />, document.getElementById("blog"));

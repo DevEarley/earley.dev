@@ -1,0 +1,106 @@
+class EarleyDevRouter extends React.Component {
+	state = {
+		currentPath : (location.hash)
+	}
+	roots=[];
+
+	constructor(){
+		super();
+		console.log("EarleyDevRouter | constructor");
+		window.onhashchange = ()=>{this.onPathUpdated()};
+	}
+
+	buildRoot(id){
+		console.log("EarleyDevRouter | buildRoot | " + id);
+		let element = document.getElementById(id);
+		if(element== null)return;
+		this.roots[id] = ReactDOM.createRoot(element);
+		console.log(this.roots);
+		}
+
+	unmountById(id) {
+		console.log("EarleyDevRouter | unmountById | " + id);
+
+		let element = document.getElementById(id);
+		if(element== null)return;
+		if(this.roots[id]== undefined)this.buildRoot(id);
+		this.roots[id].unmount();
+	}
+
+	renderByIdAndJSX( id,JSX){
+		console.log("EarleyDevRouter | renderByIdAndJSX | " + id);
+
+		if(this.roots[id]== undefined){
+			this.buildRoot(id);
+		}
+			this.roots[id].render(JSX);
+	}
+
+    onPathUpdated() {
+		console.log("EarleyDevRouter | onPathUpdated");
+		let oldPath = this.state.currentPath;
+
+		this.setState({
+			currentPath : (location.hash)
+		});
+		console.log("Old path | "+ oldPath +" | new path | " +this.state.currentPath);
+    }
+
+	renderSite() {
+		console.log("EarleyDevRouter | renderSite | "+location.hash);
+
+		if (location.hash.startsWith("#blog?blog=")) {
+			this.renderByIdAndJSX("blog-container", <EarleyBlog />);
+		}
+		if (location.hash.startsWith("#blogs")) {
+			this.renderByIdAndJSX("intro-container", <EarleyBlogIntro />);
+			this.renderByIdAndJSX("blogs-container", <EarleyBlogs />);
+		}
+		else {
+			this.renderByIdAndJSX("intro-container", <EarleyBlogIntro />);
+			this.renderByIdAndJSX("featured-blogs-container", <EarleyFeaturedBlogs />);
+			this.renderByIdAndJSX("articles-container", <EarleyDevArticles />);
+		}
+	}
+
+	componentDidUpdate(){
+		this.renderSite();
+	}
+
+	componentDidMount(){
+		this.renderSite();
+	}
+
+	render() {
+		console.log("EarleyDevRouter | Render |" + location.hash);
+		if(location.hash.startsWith("#blog?blog=")){
+			return <div id="router">
+				<div id="intro-container" style={{display: 'none'}}></div>
+				<div id="blogs-container" style={{display: 'none'}}></div>
+				<div id="blog-container"></div>
+				<div id="featured-blogs-container" style={{display: 'none'}}></div>
+				<div id="articles-container"  style={{display: 'none'}}></div>
+			</div>
+			}
+		else if(location.hash.startsWith("#blogs")){
+			return <div id="router">
+				<div id="intro-container"></div>
+				<div id="blogs-container"></div>
+				<div id="blog-container" style={{display: 'none'}}></div>
+				<div id="featured-blogs-container" style={{display: 'none'}}></div>
+				<div id="articles-container"  style={{display: 'none'}}></div>
+			</div>
+		}
+		else{
+			return <div id="router">
+				<div id="intro-container"></div>
+				<div id="blogs-container" style={{display: 'none'}}></div>
+				<div id="blog-container" style={{display: 'none'}}></div>
+				<div id="featured-blogs-container"></div>
+				<div id="articles-container"></div>
+			</div>
+		}
+	}
+}
+let rootRouter = ReactDOM.createRoot( document.getElementById('router-container'));
+rootRouter.render(<EarleyDevRouter />);

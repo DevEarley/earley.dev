@@ -5,13 +5,17 @@ class MicroBlog{
         if (blog != null) {
             blog.innerHTML = "";
             _entries = _entries.sort((a,b)=>a.index-b.index);
-            console.log(_entries)
+           // console.log(_entries)
             for (let i = 0; i < _entries.length; i++) {
                 blog.innerHTML += "<div class='copy'>"
                     + _entries[i].html
                     + "<!--" + _entries[i].url + "-->"
                     + "</div>";
             }
+        }
+        else{
+            console.error("could not find tag with MicroBlog")
+            
         }
     }
 
@@ -42,8 +46,8 @@ class MicroBlog{
             client.open('GET', './' + _files[f].path);
             client.send();
             client.onreadystatechange =  () =>{
-                console.log("update Blog | "+ client.readyState);
                 if (client.readyState != 4) return;
+                //console.log("update Blog | "+ client.readyState);
                 let html = _converter.makeHtml(client.responseText);
                 let url = client.responseURL;
                 let entry = {
@@ -51,7 +55,7 @@ class MicroBlog{
                     url: url, 
                     index: _index
                 };
-                console.log(entry);
+               // console.log(entry);
                 _entries.push(entry);
                   this.updateBlog(_entries,_files);
 

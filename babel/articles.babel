@@ -25,18 +25,25 @@ class EarleyDevArticles extends React.Component{
 		xhr.send();
 	}
 
+   componentWillUnmount(){
+      console.log("EarleyDevArticles | componentWillUnmount ");
+    }
+
 	componentDidMount(){
 		console.log("EarleyDevArticles | componentDidMount");
 		this.searchInput = document.getElementById("search-input");
 		this.articlesElement = document.getElementById("articles");
+		if(this.searchInput == null){
+		console.log("componentDidMount before render")
+		return;}
 		this.searchInput.onkeyup = (e)=>this.onSearch(e) ;
 		this.searchInput.onblur =  (e)=>this.onSearch(e);
 		
 	}
 
 	filteredArticlesSearchPredicate(article){
-		return article.name.includes(this.searchInputValue )
-		|| article.link.includes(this.searchInputValue);
+		return article.name.toLowerCase().includes(this.searchInputValue.toLowerCase())
+		|| article.link.toLowerCase().includes(this.searchInputValue.toLowerCase());
 		//|| article.date.includes(this.searchInputValue)
 	//	|| article.tags.includes(this.searchInputValue);
 	}
@@ -51,7 +58,6 @@ class EarleyDevArticles extends React.Component{
 	}
 
 	buildRow(article){
-		console.log("build Row");
 		return (<tr>
 			<td><img src={"images/source-"+article.source +".png"}/></td>
 			<td><a href={article.link}>{article.name}</a></td>
@@ -72,4 +78,3 @@ class EarleyDevArticles extends React.Component{
 	}
 
 }
-ReactDOM.render(<EarleyDevArticles />, document.getElementById("articles"));

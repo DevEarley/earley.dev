@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earley Dev Studio</title>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"
             crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"
             crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script
@@ -24,6 +24,7 @@
           rel="stylesheet">
     <script type="text/javascript"  src="./microblog.js"></script>
 
+    <script type="text/babel" src="babel/MicroBlog.babel"></script>
     <script type="text/babel" src="babel/rays.babel"></script>
     <script type="text/babel" src="babel/bubbles.babel"></script>
     <!-- <script type="text/babel" src="babel/fish.babel"></script> -->
@@ -31,8 +32,12 @@
     <script type="text/babel" src="babel/threejs.babel"></script>
     <script type="text/babel" src="babel/root.babel"></script>
     <script type="text/babel" src="babel/articles.babel"></script>
+    <script type="text/babel" src="babel/blog.babel"></script>
+    <script type="text/babel" src="babel/blogs.babel"></script>
     <script type="text/babel" src="babel/featured-blogs.babel"></script>
     <script type="text/babel" src="babel/navigation.babel"></script>
+    <script type="text/babel" src="babel/intro.babel"></script>
+    <script type="text/babel" src="babel/router.babel"></script>
     <link href="earley.dev.css" rel="stylesheet" />
 </head>
 
@@ -41,17 +46,9 @@
     <div class="site-container">
         <div id="root-container"></div>
         <div id="navigation-container"></div>
+        <div id="router-container"></div>
        
-        <div class="copy" id="topcopy">
-            <strong>Welcome!</strong> I am a full stack software developer from <b>Boynton Beach, Florida</b>. I have worked on  enterprise solutions, mobile apps, developer tools, marketing campaigns, and wholesale trading platforms.
-            I have lots of experience with <b>JavaScript, TypeScript, Babel, HTML, SCSS</b> and <b>Angular</b> on the frontend; <b>C#</b> with <b>.NET, SQL,</b> and <b>Entity Framework</b> on the server-side.
-            Also, I have experience with designing UX and indie game development. I specialize in: abstracting problems into manageable tasks, creating features from scratch, and implementing all aspects of a solution.
-            <br />
-            <br />
-            Please see my <a href="https://docs.google.com/document/d/1cj2--8C0UOVTf-DEApwViRYPAVmXHJFeWa64flpe-9Q/edit?usp=sharing">resume</a> for more information.
-        </div>
-        <div id="blog"></div>
-        <div id="articles"></div>
+       
     </div>
 </body>
 

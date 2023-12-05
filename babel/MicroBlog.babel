@@ -1,0 +1,18 @@
+class MicroBlogContainer {
+
+    converter = new showdown.Converter();
+	microBlog;
+
+	constructor(){
+	    this.microBlog =  new MicroBlog();
+	}
+
+	initFiles(files){
+		this.microBlog.init(files, this.converter,[]);
+	}
+    initFile(filename) {
+      this.microBlog.init([filename], this.converter,[]);
+	 }
+
+}
+let microBlogContainer = new MicroBlogContainer();

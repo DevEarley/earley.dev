@@ -1,0 +1,25 @@
+class EarleyBlogs extends React.Component {
+       files = [
+        { index:0,path:'blogs/12-2-23.md'} ,
+        { index:1,path:'blogs/10-3-21.md'} ,
+        { index:2,path:'blogs/9-11-21.md'} ,
+    ];
+   
+    componentWillUnmount(){
+      console.log("EarleyBlogs | componentWillUnmount ");
+    }
+
+    componentDidMount() {
+    console.log("EarleyBlogs | componentDidMount | ");
+    
+    microBlogContainer.initFiles(this.files);
+	 }
+      render() {
+        return (
+        <div id="blogs">
+          <h1>Blog</h1>
+          <div id="MicroBlog"></div>
+        </div>
+        )
+    }
+}

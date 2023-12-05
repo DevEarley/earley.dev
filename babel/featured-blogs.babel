@@ -5,12 +5,11 @@ class EarleyFeaturedBlogs extends React.Component {
         { index:1,path:'blogs/10-3-21-preview.md'} ,
         { index:2,path:'blogs/9-11-21-preview.md'} ,
     ];
-    converter = new showdown.Converter();
     entries = [];
     componentDidMount() {
     console.log("EarleyBlog | componentDidMount");
-    let mb =  new MicroBlog();
-    mb.init(this.files, this.converter,this.entries);
+   
+    microBlogContainer.initFiles(this.files);
     
 	 }
       render() {
@@ -22,5 +21,3 @@ class EarleyFeaturedBlogs extends React.Component {
         )
     }
 }
-
-ReactDOM.render(<EarleyFeaturedBlogs />, document.getElementById("blog"));

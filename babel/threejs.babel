@@ -95,5 +95,5 @@ class EarleyDevThreeJS extends React.Component {
         )
     }
 }
-
-ReactDOM.render(<EarleyDevThreeJS />, document.getElementById("earley-dev-threejs-renderer"));
+let rootThreeJS = ReactDOM.createRoot( document.getElementById('earley-dev-threejs-renderer'));
+rootThreeJS.render(<EarleyDevThreeJS />);

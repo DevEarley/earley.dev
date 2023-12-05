@@ -1,0 +1,15 @@
+
+class EarleyBlogIntro extends React.Component {
+
+    componentWillUnmount(){
+      console.log("EarleyBlogIntro | componentWillUnmount ");
+    }
+    
+	render(){
+		return (
+			<div className="copy" id="topcopy">
+				Intro
+			</div>
+	);}
+}
+//ReactDOM.render(<EarleyBlogIntro />, document.getElementById("intro"));

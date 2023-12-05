@@ -29,21 +29,21 @@
 	},
 	{
 		"name":	"Removing the canvas texture from a scanned painting",
-		"link":	"./blog.html?article=9-11-21.md",
+		"link":	"#blog?blog=9-11-21.md",
 		"source":"blog",
 		"date":"9/11/21",
 		"tags":["Art"]
 	},
 	{
 		"name":	"PyraMaze Devlog and Retrospective - September 2021 Release",
-		"link":	"./blog.html?article=10-3-21.md",
+		"link":	"#blog?blog=10-3-21.md",
 		"source":"blog",
 		"date":"10/3/21",
 		"tags":["32 Bit Jam","Game Development","Dev Log","Retrospective"]
 	},
 	{
 		"name":	"32BitJam is a go!!",
-		"link":	"./blog.html?article=12-2-23.md",
+		"link":	"#blog?blog=12-2-23.md",
 		"source":"blog",
 		"date":"12/2/23",
 		"tags":["32 Bit Jam","Game Development"]
