@@ -173,6 +173,10 @@ input:hover {
 }
 
 #featured-blogs  #MicroBlog .copy {
+margin: 15px;
+  padding: 30px;
+  padding-top:20px;
+  padding-bottom:10px;
     width: 1%;;
     flex:auto;
     border-radius: 20px;
@@ -184,9 +188,16 @@ input:hover {
 }
 
 #featured-blogs #MicroBlog .copy h1 {
-font-size: 25pt;
+font-size: 15pt;
 margin: 0;
 padding: 0;
+}
+
+#router-container{
+width: 66vw;
+  min-width: 600px;
+  max-width: 2000px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 1000px) {
