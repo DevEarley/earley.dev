@@ -52,13 +52,12 @@ class EarleyDevRouter extends React.Component {
 		if (location.hash.startsWith("#blog?blog=")) {
 			this.renderByIdAndJSX("blog-container", <EarleyBlog />);
 		}
-		if (location.hash.startsWith("#blogs")) {
-			this.renderByIdAndJSX("intro-container", <EarleyBlogIntro />);
+		else if (location.hash.startsWith("#blogs")) {
 			this.renderByIdAndJSX("blogs-container", <EarleyBlogs />);
 		}
 		else {
 			this.renderByIdAndJSX("intro-container", <EarleyBlogIntro />);
-			this.renderByIdAndJSX("featured-blogs-container", <EarleyFeaturedBlogs />);
+			// this.renderByIdAndJSX("featured-blogs-container", <EarleyFeaturedBlogs />);
 			this.renderByIdAndJSX("articles-container", <EarleyDevArticles />);
 		}
 	}
@@ -84,7 +83,7 @@ class EarleyDevRouter extends React.Component {
 			}
 		else if(location.hash.startsWith("#blogs")){
 			return <div id="router">
-				<div id="intro-container"></div>
+				<div id="intro-container" style={{display: 'none'}}></div>
 				<div id="blogs-container"></div>
 				<div id="blog-container" style={{display: 'none'}}></div>
 				<div id="featured-blogs-container" style={{display: 'none'}}></div>
@@ -96,7 +95,7 @@ class EarleyDevRouter extends React.Component {
 				<div id="intro-container"></div>
 				<div id="blogs-container" style={{display: 'none'}}></div>
 				<div id="blog-container" style={{display: 'none'}}></div>
-				<div id="featured-blogs-container"></div>
+				<div id="featured-blogs-container" style={{display: 'none'}}></div>
 				<div id="articles-container"></div>
 			</div>
 		}

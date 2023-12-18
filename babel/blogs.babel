@@ -17,7 +17,6 @@ class EarleyBlogs extends React.Component {
       render() {
         return (
         <div id="blogs">
-          <h1>Blog</h1>
           <div id="MicroBlog"></div>
         </div>
         )

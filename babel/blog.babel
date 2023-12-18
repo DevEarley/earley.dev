@@ -6,19 +6,19 @@ class EarleyBlog extends React.Component {
     }
     
     getFilenameFromURL(){
-      let search = window.location.search;
+      let search = window.location.hash;
       let params = new URLSearchParams(search);
-      let blog = params.get('blog');
-      if(blog == null || blog == undefinded){
-        blog = "";
-      }
+      console.log("blog|");
+      let blog = params.get('#blog?blog');
+      console.log(blog);
+
       return blog;
     }
 
     componentDidMount() {
       let filename = this.getFilenameFromURL();
-      console.log("EarleyBlog | componentDidMount | " + blog);
-     microBlogContainer.initFile(filename);
+      console.log("EarleyBlog | componentDidMount | " + filename);
+     microBlogContainer.initFiles([{ index:0,path:"blogs/"+filename}]);
      
 	 }
 

@@ -114,7 +114,7 @@ input:hover {
 
 #articles-container{
     max-width: 1200px;
-    margin: 40px;
+   
     min-height: 800px;
     overflow-y: auto;
     padding: 40px;
@@ -132,7 +132,9 @@ input:hover {
 #articles-container img {
     width:20px;
 }
-
+#articles{
+width:100%;
+}
 #topcopy {
     z-index: 1;
     background: rgb(13,3,41);
