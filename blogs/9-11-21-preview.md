@@ -2,5 +2,5 @@
 
 ![](https://devearley.github.io/earley.dev/images/FFT.png)
 
-[Click to read more...](#blog?blog=9-11-21.md)
+[Click to read more...](?page=blog&blog=9-11-21.md)
 
