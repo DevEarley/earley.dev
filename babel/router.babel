@@ -1,6 +1,6 @@
 class EarleyDevRouter extends React.Component {
 	state = {
-		currentPath : (location.hash)
+		currentPath : (location.search)
 	}
 	roots=[];
 
@@ -41,18 +41,18 @@ class EarleyDevRouter extends React.Component {
 		let oldPath = this.state.currentPath;
 
 		this.setState({
-			currentPath : (location.hash)
+			currentPath : (location.search)
 		});
 		console.log("Old path | "+ oldPath +" | new path | " +this.state.currentPath);
     }
 
 	renderSite() {
-		console.log("EarleyDevRouter | renderSite | "+location.hash);
+		console.log("EarleyDevRouter | renderSite | "+location.search);
 
-		if (location.hash.startsWith("#blog?blog=")) {
+		if (location.search.startsWith("?page=blog&blog=")) {
 			this.renderByIdAndJSX("blog-container", <EarleyBlog />);
 		}
-		else if (location.hash.startsWith("#blogs")) {
+		else if (location.search.startsWith("?page=blogs")) {
 			this.renderByIdAndJSX("blogs-container", <EarleyBlogs />);
 		}
 		else {
@@ -71,8 +71,8 @@ class EarleyDevRouter extends React.Component {
 	}
 
 	render() {
-		console.log("EarleyDevRouter | Render |" + location.hash);
-		if(location.hash.startsWith("#blog?blog=")){
+		console.log("EarleyDevRouter | Render |" + location.search);
+		if(location.search.startsWith("?page=blog&blog=")){
 			return <div id="router">
 				<div id="intro-container" style={{display: 'none'}}></div>
 				<div id="blogs-container" style={{display: 'none'}}></div>
@@ -81,7 +81,7 @@ class EarleyDevRouter extends React.Component {
 				<div id="articles-container"  style={{display: 'none'}}></div>
 			</div>
 			}
-		else if(location.hash.startsWith("#blogs")){
+		else if(location.search.startsWith("?page=blogs")){
 			return <div id="router">
 				<div id="intro-container" style={{display: 'none'}}></div>
 				<div id="blogs-container"></div>

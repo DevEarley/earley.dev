@@ -6,10 +6,10 @@ class EarleyBlog extends React.Component {
     }
     
     getFilenameFromURL(){
-      let search = window.location.hash;
+      let search = window.location.search;
       let params = new URLSearchParams(search);
       console.log("blog|");
-      let blog = params.get('#blog?blog');
+      let blog = params.get('blog');
       console.log(blog);
 
       return blog;
