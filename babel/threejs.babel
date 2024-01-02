@@ -8,7 +8,7 @@ class EarleyDevThreeJS extends React.Component {
     causticsTexture = new THREE.ImageUtils.loadTexture('images/caustics.png');
     floor = new EarleyDevFloor();
     bubbles = new EarleyDevBubbles();
-    rays = new EarleyDevRays();
+    //rays = new EarleyDevRays();
     // fish = new EarleyDevFish();
 
     waitForIt = 1 / 24 * 1000;  //42ms;
@@ -28,12 +28,12 @@ class EarleyDevThreeJS extends React.Component {
         // this.scene.add(this.fish.setupFish(this.scene));
         this.scene.add(this.floor.setupFloor());
         this.scene.add(this.bubbles.setupBubbles());
-        this.scene.add(this.rays.setupRays());
+        //this.scene.add(this.rays.setupRays());
 
         var animate = () => {
             requestAnimationFrame(animate);
             // this.fish.updateFish();
-            this.rays.updateRays();
+         //   this.rays.updateRays();
             this.bubbles.updateBubbles();
             if (Date.now() > this.lastUpdate + this.waitForIt) {
                 this.lastUpdate = Date.now();
