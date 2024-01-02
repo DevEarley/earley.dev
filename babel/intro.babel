@@ -9,7 +9,7 @@ class EarleyBlogIntro extends React.Component {
 		return (
 			<div className="copy" id="topcopy">
 	<p>
-				EarleyDev Studios isa a family owned web and game development studio founded by husband and wife Alex and Charlotte Earley.
+				EarleyDev Studios is a family owned web and game development studio founded by husband and wife Alex and Charlotte Earley.
 </p><p>
 Alex and Charlotte are originally from South Florida, where Alex went to college at Florida Atlantic University for computer science and Charlotte worked in the restaurant business for almost 10 years. In late 2022, they decided to pack up themselves and their two cats to move to Southern Maine for a change of pace and a chance to experience seasons. They now live just south of Portland, Maine. 
 </p><p>
