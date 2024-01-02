@@ -220,6 +220,7 @@ input:hover {
         max-width: 1000px;
     }
   h1.title {
+  margin-top: 60px;;
     font-size: 16px;
     }
  
@@ -227,7 +228,7 @@ input:hover {
         width: 60px;
         height: 60px;
         left: 10px;
-        top: 10px;
+        top: 70px;
     }
 
     .title {
@@ -250,10 +251,12 @@ input:hover {
         padding: 10px;
     }
 
-    #navigation {
-        position: absolute;
-        right: 20px;
-        top: 20px;
+    #navigation { background: #130341;
+        position: fixed;
+        left: 0px;
+        right:0px;
+        top: 0px;
+        padding:20px;
         z-index: 2;
     }
 
