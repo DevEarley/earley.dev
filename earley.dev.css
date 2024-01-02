@@ -202,6 +202,10 @@ width: 66vw;
   margin: auto;
 }
 
+#topcopy{
+margin: 0;
+}
+
 @media only screen and (max-width: 1000px) {
     #avatar {
         width: 60px;
