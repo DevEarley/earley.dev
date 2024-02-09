@@ -9,14 +9,12 @@ class EarleyBlogIntro extends React.Component {
 		return (
 			<div className="copy" id="topcopy">
 	<p>
-				EarleyDev Studios is a family owned web and game development studio founded by husband and wife Alex and Charlotte Earley.
-</p><p>
-Alex and Charlotte are originally from South Florida, where Alex went to college at Florida Atlantic University for computer science and Charlotte worked in the restaurant business for almost 10 years. In late 2022, they decided to pack up themselves and their two cats to move to Southern Maine for a change of pace and a chance to experience seasons. They now live just south of Portland, Maine. 
-</p><p>
-In the process of exploring their new surroundings, they started noticing a lot of local businesses with websites that could use a little help. Alex, being a software developer with over 10 years experience, saw the opportunity in front of them and joined Upwork to start their freelancing career. Tired of their respective jobs, the couple decided to work together to start a studio to work for these local businesses and anyone else who needs web or game development project assistance. Combining Alex’s knowledge in computer science and Charlotte’s expertise in taking care of customers, they have created a responsive, client-centric web studio that aims to fix an array of problems, big and small. 
-</p><p>
 Do you have a website that’s receiving a lot of visitors but not much engagement? Perhaps your mobile website makes it difficult for customers to peruse your menu. Maybe you have an idea for a video game that you want to bring to life? EarleyDev Studios is here to help you make your website as accessible and user friendly as possible. Contact us today!
-</p>
+<br/>
+<br/>
+<br/>
+About me: My name is Alex Earley, I am a freelance software developer with over 10 years of professional experience. I live in Portland, Maine with my wife and two cats. I have been a professional software developer since I graduated from F.A.U. in 2013. I have worked on teams big and small. I have worked as a developer and as a hands-off team lead. I have shipped many projects to some very big clients (see my resume for more on that). My full time job has typically been working on web applications, but since 2014 I have been working on Unity3D games as a hobby.
+	</p>
 			</div>
 	);}
 }
