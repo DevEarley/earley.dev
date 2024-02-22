@@ -9,7 +9,7 @@ class EarleyBlogIntro extends React.Component {
 		return (
 			<div className="copy" id="topcopy">
 	<p>
-Do you have a website that’s receiving a lot of visitors but not much engagement? Perhaps your mobile website makes it difficult for customers to peruse your menu. Maybe you have an idea for a video game that you want to bring to life? EarleyDev Studios is here to help you make your website as accessible and user friendly as possible. Contact us today!
+Do you have a website that’s receiving a lot of visitors but not much engagement? Perhaps your mobile website makes it difficult for customers to peruse your menu. Maybe you have an idea for a video game that you want to bring to life? EarleyDev Studios is here to help you make your website as accessible and user friendly as possible.
 <br/>
 <br/>
 <br/>
