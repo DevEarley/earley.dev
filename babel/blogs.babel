@@ -1,8 +1,10 @@
 class EarleyBlogs extends React.Component {
        files = [
-        { index:0,path:'blogs/12-2-23.md'} ,
-        { index:1,path:'blogs/10-3-21.md'} ,
-        { index:2,path:'blogs/9-11-21.md'} ,
+        { index:0,path:'blogs/2-29-24.md'} ,
+        { index:1,path:'blogs/2-26-24.md'} ,
+        { index:2,path:'blogs/12-2-23.md'} ,
+        { index:3,path:'blogs/10-3-21.md'} ,
+        { index:4,path:'blogs/9-11-21.md'} ,
     ];
    
     componentWillUnmount(){
