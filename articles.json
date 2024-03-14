@@ -1,17 +1,23 @@
 [
 	{
+		"name":"Marketing is hard, but it can be easier.",
+		"source":"blog",
+		"date":"3/14/2024",
+		"tags":["Game Development", "Marketing", "Game Design","Patterns & Best Practices"]
+	},
+	{
 		"name":"Building a useful Game Design Document",
 		"link":	"?page=blog&blog=2-29-24.md",
 		"source":"blog",
 		"date":"2/29/2024",
-		"tags":["Game Development, Game Design Document, Game Design","Patterns & Best Practices"]
+		"tags":["Game Development", "Game Design Document", "Game Design","Patterns & Best Practices"]
 	},
 	{
 		"name":"Thoughts on Masahiro Sakurai's video about work ethics.",
 		"link":	"?page=blog&blog=2-26-24.md",
 		"source":"blog",
 		"date":"2/26/2024",
-		"tags":["Game Development, Game Design","Patterns & Best Practices"]
+		"tags":["Game Development", "Game Design","Patterns & Best Practices"]
 	},
 	{
 		"name":"Texture Pack #7 | Dark Castle",
